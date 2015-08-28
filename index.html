@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
+		<style>
+		html, body {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-size: 16px;
+			text-align: center;
+		}
+		p {
+			text-align: left;
+			padding-left: 0.5em;
+			font-size: 1.5em;
+			z-index: 999;
+			position: absolute;
+			top: 0.3em;
+		}
+		 
+
+		.lifeTotal {
+			font-size: 10em;
+			font-weight: 600;
+		}
+
+		.btn {
+			font-size: 2em;
+			font-weight: 300;
+			width: 100%;
+			margin: 3px 0;
+			background: white;
+			border: 3px solid black;
+		}
+
+		.footer {
+			position: fixed;
+			bottom: 0;
+			left: 20%;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<p>Current Authority:</p>
+				<div id="life" class="col-xs-12 lifeTotal">50</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<button class="btn" onclick="add('life', 1);">+1</button>
+				</div>
+				<div class="col-xs-6">
+					<button class="btn" onclick="subtract('life', 1);">-1</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<button class="btn" onclick="add('life', 5);">+5</button>
+				</div>
+				<div class="col-xs-6">
+					<button class="btn" onclick="subtract('life', 5);">-5</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<button class="btn" onclick="add('life', 10);">+10</button>
+				</div>
+				<div class="col-xs-6">
+					<button class="btn" onclick="subtract('life', 10);">-10</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<button class="btn" onclick="add('life', 20);">+20</button>
+				</div>
+				<div class="col-xs-6">
+					<button class="btn" onclick="subtract('life', 20);">-20</button>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			Please support the official game <a href="http://www.starrealms.com/">here.</a><br />
+			Star Realms is &copy;2013 White Wizard Games.
+		</div>
+		<script>
+			function add(player, num) {
+				var element = document.getElementById(player.toString());
+				var temp = parseInt(element.innerHTML);
+				num = parseInt(num);
+				var newString =  (temp + num).toString();
+				element.innerHTML = newString;
+			}
+			function subtract(player, num) {
+				var element = document.getElementById(player.toString());
+				var temp = parseInt(element.innerHTML);
+				num = parseInt(num);
+				var newString =  (temp - num).toString();
+				element.innerHTML = newString;
+			}
+		</script>
+	</body>
+</html>
