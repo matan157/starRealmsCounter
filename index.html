@@ -34,9 +34,44 @@
 		}
 
 		.footer {
-			position: fixed;
-			bottom: 0;
-			left: 20%;
+			
+		}
+		
+		@media(max-width: 1200px) {
+			html, body {
+				font-family: 'Source Sans Pro', sans-serif;
+				font-size: 20px;
+				text-align: center;
+				width: 100%;
+			}
+			p {
+				text-align: left;
+				padding-left: 0.5em;
+				font-size: 1.5em;
+				z-index: 999;
+				position: absolute;
+				top: 0.3em;
+			}
+			 
+
+			.lifeTotal {
+				font-size: 27em;
+				font-weight: 600;
+			}
+
+			.btn {
+				font-size: 3em;
+				font-weight: 300;
+				width: 100%;
+				margin: 3px 0;
+				padding: 15px 0;
+				background: white;
+				border: 3px solid black;
+			}
+			.footer {
+				margin-top: 2em;
+				font-size: 2em;
+			}
 		}
 		</style>
 	</head>
@@ -81,7 +116,7 @@
 		</div>
 		<div class="footer">
 			Please support the official game <a href="http://www.starrealms.com/">here.</a><br />
-			Star Realms is &copy;2013 White Wizard Games.
+			Star Realms is &copy;2013 White Wizard Games. <br />
 			Contact me <a href="mailto:info@starrealmscounter.com">here.</a>
 		</div>
 		<script>
@@ -100,5 +135,6 @@
 				element.innerHTML = newString;
 			}
 		</script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</body>
 </html>
