@@ -3,6 +3,32 @@
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="black">
+
+		<!-- ****** faviconit.com favicons ****** -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+		<link rel="icon" type="image/png" sizes="196x196" href="/favicon-192.png">
+		<link rel="icon" type="image/png" sizes="160x160" href="/favicon-160.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+		<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+		<link rel="apple-touch-icon" href="/favicon-57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/favicon-72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/favicon-60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/favicon-76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+		<meta name="msapplication-TileColor" content="#FFFFFF">
+		<meta name="msapplication-TileImage" content="/favicon-144.png">
+		<meta name="msapplication-config" content="/browserconfig.xml">
+		<!-- ****** faviconit.com favicons ****** -->
 		<style>
 		html, body {
 			font-family: 'Source Sans Pro', sans-serif;
@@ -17,7 +43,16 @@
 			position: absolute;
 			top: 0.3em;
 		}
-		 
+		
+		
+		button.refresh {
+			background: white;
+			width: 2.5em;
+			height: 2.5em;
+			border: 3px solid black;
+			border-radius: 50%;
+			z-index: 998;
+		}
 
 		.lifeTotal {
 			font-size: 10em;
@@ -34,7 +69,8 @@
 		}
 
 		.footer {
-			
+				margin-top: 2em;
+				font-size: 2em;
 		}
 		
 		@media(max-width: 1200px) {
@@ -47,30 +83,47 @@
 			p {
 				text-align: left;
 				padding-left: 0.5em;
-				font-size: 1.5em;
+				font-size: 1em;
 				z-index: 999;
 				position: absolute;
 				top: 0.3em;
 			}
-			 
+			
+			.refresh {
+				position: absolute;
+				font-size: 1.3em;
+				display: inline-block;
+				float: right;
+				right: 10px;
+				top: 10px;
+			}
+			
+			button.refresh {
+				background: white;
+				width: 2.2em;
+				height: 2.2em;
+				border: 3px solid black;
+				border-radius: 50%;
+				z-index: 998;
+			}
 
 			.lifeTotal {
-				font-size: 27em;
+				font-size: 8em;
 				font-weight: 600;
 			}
 
 			.btn {
-				font-size: 3em;
+				font-size: 1.5em;
 				font-weight: 300;
 				width: 100%;
 				margin: 3px 0;
-				padding: 15px 0;
+				padding: 5px 0;
 				background: white;
 				border: 3px solid black;
 			}
 			.footer {
 				margin-top: 2em;
-				font-size: 2em;
+				font-size: 1em;
 			}
 		}
 		</style>
@@ -79,6 +132,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<p>Current Authority:</p>
+				<button id="refreshBtn" class="refresh"><i class="fa fa-refresh"></i></button>
 				<div id="life" class="col-xs-12 lifeTotal">50</div>
 			</div>
 			<div class="row">
@@ -134,7 +188,30 @@
 				var newString =  (temp - num).toString();
 				element.innerHTML = newString;
 			}
+			function refresh() {
+				document.getElementById("life").innerHTML = "50";
+			}
+			
+			var refreshBtn = document.getElementById("refreshBtn");
+			refreshBtn.onclick = refresh;
 		</script>
+		<!-- Start of StatCounter Code for Default Guide -->
+		<script type="text/javascript">
+		var sc_project=10593538; 
+		var sc_invisible=1; 
+		var sc_security="91d22018"; 
+		var scJsHost = (("https:" == document.location.protocol) ?
+		"https://secure." : "http://www.");
+		document.write("<sc"+"ript type='text/javascript' src='" +
+		scJsHost+
+		"statcounter.com/counter/counter.js'></"+"script>");
+		</script>
+		<noscript><div class="statcounter"><a title="shopify stats"
+		href="http://statcounter.com/shopify/" target="_blank"><img
+		class="statcounter"
+		src="http://c.statcounter.com/10593538/0/91d22018/1/"
+		alt="shopify stats"></a></div></noscript>
+		<!-- End of StatCounter Code for Default Guide -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</body>
 </html>
